@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mas Tulung Mas - Solusi Serabutan Karangpandan</title>
+    <meta
+      name="description"
+      content="Jasa personal asisten, ojek, belanja pasar, dan teman curhat area Karangpandan. Siap membantu 24 jam dengan harga seduluran."
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                navy: '#0f172a', // Warna Gelap Logo
+                gold: '#f59e0b', // Warna Kuning Logo
+                green: '#15803d', // Warna Hijau Alam Karangpandan
+                light: '#fffbeb', // Krem Lembut
+              },
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            },
+            backgroundImage: {
+              batik:
+                "url('https://www.transparenttextures.com/patterns/batik-rambut.png')",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: 'Playfair Display', serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-slate-800">
+    <!-- Navbar -->
+    <nav
+      class="bg-brand-navy text-white sticky top-0 z-50 border-b border-white/10 shadow-xl"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex items-center gap-3">
+            <img
+              src="asset/logo.png"
+              alt="Logo"
+              class="h-10 w-10 rounded-full border-2 border-brand-gold bg-white object-cover"
+            />
+            <div>
+              <h1
+                class="font-bold text-xl leading-none text-brand-gold tracking-wide"
+              >
+                MAS TULUNG MAS
+              </h1>
+              <p class="text-[10px] text-gray-400 uppercase tracking-widest">
+                Karangpandan
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#layanan"
+              class="hover:text-brand-gold transition text-sm font-medium tracking-wide"
+              >LAYANAN</a
+            >
+            <a
+              href="#harga"
+              class="hover:text-brand-gold transition text-sm font-medium tracking-wide"
+              >HARGA</a
+            >
+            <a
+              href="#ketentuan"
+              class="hover:text-brand-gold transition text-sm font-medium tracking-wide"
+              >KETENTUAN</a
+            >
+          </div>
+
+          <a
+            href="https://wa.me/6283133851492"
+            class="hidden md:flex bg-brand-gold text-brand-navy px-6 py-2 rounded-full font-bold text-sm hover:bg-yellow-400 transition items-center gap-2"
+          >
+            <i data-lucide="phone" class="w-4 h-4"></i> Hubungi Kami
+          </a>
+
+          <!-- Mobile Menu Icon -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden text-brand-gold focus:outline-none"
+          >
+            <i data-lucide="menu" class="w-7 h-7"></i>
+          </button>
+        </div>
+
+                <!-- Mobile Menu (Hidden by default, Overlay mode) -->
+
+                <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-brand-navy border-t border-white/10 shadow-2xl z-50 transition-all duration-300 ease-in-out">
+
+                  <div class="flex flex-col p-6 space-y-4">
+
+                     <a href="#layanan" class="text-gray-300 hover:text-brand-gold font-medium tracking-wide block py-2 border-b border-white/5">LAYANAN</a>
+
+                     <a href="#harga" class="text-gray-300 hover:text-brand-gold font-medium tracking-wide block py-2 border-b border-white/5">HARGA</a>
+
+                     <a href="#ketentuan" class="text-gray-300 hover:text-brand-gold font-medium tracking-wide block py-2 border-b border-white/5">KETENTUAN</a>
+
+                     <a href="https://wa.me/6283133851492" class="text-brand-gold font-bold flex items-center gap-2 py-2">
+
+                       <i data-lucide="phone" class="w-4 h-4"></i> Hubungi Kami
+
+                     </a>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </nav>
+
+    <script>
+      // Mobile Menu Toggle Logic
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+
+      // Close menu when clicking a link
+      menu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+        });
+      });
+    </script>
+
+    <!-- Hero Section -->
+    <header
+      class="relative bg-brand-navy min-h-[600px] flex items-center overflow-hidden"
+    >
+      <!-- Background Image with Overlay (Sawah / Terasering Indonesia) -->
+      <div class="absolute inset-0 z-0">
+        <img
+          src="asset/pasar.png"
+          alt="Pemandangan Sawah Karangpandan"
+          class="w-full h-full object-cover opacity-40"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/80 to-transparent"
+        ></div>
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto px-4 relative z-10 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center pt-10"
+      >
+        <div class="text-white">
+          <div
+            class="inline-flex items-center gap-2 border border-brand-gold/30 bg-brand-gold/10 px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm"
+          >
+            <span
+              class="w-2 h-2 rounded-full bg-green-500 animate-pulse"
+            ></span>
+            <span
+              class="text-xs font-bold text-brand-gold uppercase tracking-widest"
+              >Hiper-Lokal Karangpandan</span
+            >
+          </div>
+          <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            Apa Wae,<br />
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-200"
+              >Bisa Ditulung.</span
+            >
+          </h1>
+          <p
+            class="text-gray-300 text-lg mb-8 max-w-lg leading-relaxed font-light"
+          >
+            Layanan asisten personal "Palugada" asli cah Karangpandan. Mulai
+            dari belanja pasar, ojek dadakan, sampai teman kondangan.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#layanan"
+              class="bg-brand-gold text-brand-navy px-8 py-4 rounded-xl font-bold text-center hover:bg-yellow-400 transition shadow-lg shadow-brand-gold/20 flex items-center justify-center gap-2"
+            >
+              Lihat Layanan
+              <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </a>
+            <div class="flex items-center gap-4 px-4 py-2">
+              <!-- Avatar Orang Indonesia -->
+              <div class="flex -space-x-3">
+                <img
+                  class="w-10 h-10 rounded-full border-2 border-brand-navy object-cover"
+                  src="asset/logo.png"
+                  alt="User 1"
+                />
+                <img
+                  class="w-10 h-10 rounded-full border-2 border-brand-navy object-cover"
+                  src="asset/logo.png"
+                  alt="User 2"
+                />
+                <div
+                  class="w-10 h-10 rounded-full border-2 border-brand-navy bg-gray-700 text-xs flex items-center justify-center text-white font-bold"
+                >
+                  +50
+                </div>
+              </div>
+              <div class="text-sm text-gray-400">
+                <span class="text-white font-bold block">Terpercaya</span>
+                Warga Sekitar
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image Composition (Sosok Mas-mas Ramah) -->
+        <div class="hidden md:block relative">
+          <div
+            class="relative z-10 rounded-2xl overflow-hidden border-4 border-white/10 shadow-2xl transform rotate-2 hover:rotate-0 transition duration-500"
+          >
+            <img
+              src="asset/semar.png"
+              alt="Mas Tulung Ramah"
+              class="w-full h-auto object-cover"
+            />
+            <div
+              class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6"
+            >
+              <p class="text-white font-serif italic text-lg">
+                "Siap sedia setiap saat"
+              </p>
+            </div>
+          </div>
+          <!-- Decorative Elements -->
+          <div
+            class="absolute -top-10 -right-10 w-40 h-40 bg-brand-gold rounded-full opacity-20 blur-3xl"
+          ></div>
+          <div
+            class="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-green rounded-full opacity-20 blur-3xl"
+          ></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="layanan" class="py-24 bg-brand-light relative">
+      <div
+        class="absolute inset-0 bg-batik opacity-5 pointer-events-none"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+          <span
+            class="text-brand-green font-bold tracking-widest text-sm uppercase"
+            >Daftar Menu Bantuan</span
+          >
+          <h2 class="text-4xl md:text-5xl font-bold text-brand-navy mt-2 mb-4">
+            Pilih Sing Jenengan Butuhke
+          </h2>
+          <div class="w-20 h-1 bg-brand-gold mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Layanan A: Pangan (Pasar Tradisional) -->
+          <div
+            class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 border border-gray-100 flex flex-col"
+          >
+            <div class="h-48 overflow-hidden relative">
+              <img
+                src="asset/belanja.png"
+                alt="Pasar Tradisional"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+              <div
+                class="absolute top-4 left-4 bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full"
+              >
+                Layanan A
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <h3 class="text-xl font-bold text-brand-navy mb-2">
+                Belanja Pangan
+              </h3>
+              <p class="text-gray-600 text-sm mb-4">
+                Solusi mager. Tumbas maem, jajanan pasar, sembako, nganti sayur
+                mayur seger.
+              </p>
+              <ul class="text-sm text-gray-500 mb-6 space-y-2">
+                <li class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-brand-gold"
+                  ></i>
+                  Jarak 1 - 2.5 KM
+                </li>
+                <li class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-brand-gold"
+                  ></i>
+                  Cepat & Praktis
+                </li>
+              </ul>
+              <div
+                class="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center"
+              >
+                <span class="text-xs text-gray-400">Mulai</span>
+                <span class="text-lg font-bold text-brand-green">Rp 5.000</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Layanan B: Logistik (Motor Bebek/Matic) -->
+          <div
+            class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 border border-gray-100 flex flex-col"
+          >
+            <div class="h-48 overflow-hidden relative">
+              <img
+                src="asset/ojek.png"
+                alt="Ojek Motor"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+              <div
+                class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full"
+              >
+                Layanan B
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <h3 class="text-xl font-bold text-brand-navy mb-2">
+                Jastip & Ojek
+              </h3>
+              <p class="text-gray-600 text-sm mb-4">
+                Area luwih luas. Jastip barang, antar jemput (AJI) anak/bojo,
+                kirim paket.
+              </p>
+              <ul class="text-sm text-gray-500 mb-6 space-y-2">
+                <li class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-blue-500"
+                  ></i>
+                  Antar Jemput Aman
+                </li>
+                <li class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-blue-500"
+                  ></i>
+                  Area Menengah
+                </li>
+              </ul>
+              <div
+                class="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center"
+              >
+                <span class="text-xs text-gray-400">Mulai</span>
+                <span class="text-lg font-bold text-brand-green"
+                  >Rp 10.000</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Layanan C: Personal (Kopi/Nongkrong) -->
+          <div
+            class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 border border-gray-100 flex flex-col"
+          >
+            <div class="h-48 overflow-hidden relative">
+              <img
+                src="asset/ngopi.png"
+                alt="Ngopi Khas Jawa"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+              <div
+                class="absolute top-4 left-4 bg-brand-gold text-brand-navy text-xs font-bold px-3 py-1 rounded-full"
+              >
+                Layanan C
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <h3 class="text-xl font-bold text-brand-navy mb-2">
+                Konco & Asisten
+              </h3>
+              <p class="text-gray-600 text-sm mb-4">
+                Butuh kanca ngopi, curhat, healing tipis-tipis, utawi partner
+                kondangan?
+              </p>
+              <ul class="text-sm text-gray-500 mb-6 space-y-2">
+                <li class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-brand-gold"
+                  ></i>
+                  Ramah & Sopan
+                </li>
+                <li class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-brand-gold"
+                  ></i>
+                  Privasi Terjaga
+                </li>
+              </ul>
+              <div
+                class="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center"
+              >
+                <span class="text-xs text-gray-400">Tarif</span>
+                <span class="text-lg font-bold text-brand-green"
+                  >Nego / Sepakat</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Layanan D: Palugada (Resik-resik) -->
+          <div
+            class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 border border-gray-100 flex flex-col"
+          >
+            <div class="h-48 overflow-hidden relative">
+              <img
+                src="asset/palugada.png"
+                alt="Bantu Bersih"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+              <div
+                class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full"
+              >
+                Layanan D
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <h3 class="text-xl font-bold text-brand-navy mb-2">Palugada</h3>
+              <p class="text-gray-600 text-sm mb-4">
+                "Apa Lu Mau Gue Ada". Sing penting halal lan ora nglanggar
+                hukum. Resik omah, dll.
+              </p>
+              <ul class="text-sm text-gray-500 mb-6 space-y-2">
+                <li class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-purple-500"
+                  ></i>
+                  Serba Bisa
+                </li>
+                <li class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-purple-500"
+                  ></i>
+                  Tenaga Kuat
+                </li>
+              </ul>
+              <div
+                class="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center"
+              >
+                <span class="text-xs text-gray-400">Sewa Kendaraan</span>
+                <span class="text-sm font-bold text-brand-green"
+                  >Motor 10rb / Mobil 100rb</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Pricing & Terms -->
+    <section
+      id="ketentuan"
+      class="py-20 bg-brand-navy text-white relative overflow-hidden"
+    >
+      <!-- Background Image (Tekstur Batik) -->
+      <div class="absolute inset-0 z-0 opacity-10">
+        <img
+          src="https://images.unsplash.com/photo-1594186419758-c922e3919e91?q=80&w=2000&auto=format&fit=crop"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <div class="max-w-5xl mx-auto px-4 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Terms -->
+          <div>
+            <h2 class="text-3xl font-bold mb-6 text-brand-gold">
+              Aturan Main & Biaya Tambahan
+            </h2>
+            <p class="text-gray-300 mb-8">
+              Supados sami-sami kepenak lan transparan, monggo disimak riyin
+              nggih lur.
+            </p>
+
+            <div class="space-y-4">
+              <div
+                class="bg-white/10 p-4 rounded-xl border-l-4 border-red-500 backdrop-blur-sm"
+              >
+                <h4 class="font-bold text-white flex items-center gap-2">
+                  <i data-lucide="alert-triangle" class="text-red-500"></i>
+                  Extra Charge (+Rp 3.000)
+                </h4>
+                <p class="text-sm text-gray-300 mt-1">
+                  Dikenakan jika barang pesanan lebih dari
+                  <strong>5 pcs</strong> ATAU berat total lebih dari
+                  <strong>5 Kg</strong>.
+                </p>
+              </div>
+
+              <div
+                class="bg-white/10 p-4 rounded-xl border-l-4 border-brand-gold backdrop-blur-sm"
+              >
+                <h4 class="font-bold text-white flex items-center gap-2">
+                  <i data-lucide="wallet" class="text-brand-gold"></i> Aturan DP
+                  (Uang Muka)
+                </h4>
+                <p class="text-sm text-gray-300 mt-1">
+                  Kanggo pesenan belanja sing totale diatas
+                  <strong>Rp 50.000</strong>, wajib transfer DP riyin nggih.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transport & Delivery Prices -->
+          <div
+            class="bg-white text-brand-navy p-8 rounded-2xl shadow-2xl relative"
+          >
+            <div
+              class="absolute -top-4 -right-4 bg-brand-green text-white px-4 py-2 rounded-lg shadow-lg font-bold transform rotate-3"
+            >
+              Antar & Kirim
+            </div>
+            <h3 class="text-2xl font-bold mb-6">
+              Butuh Antar Jemput utawi Kirim Barang?
+            </h3>
+
+            <div
+              class="flex items-center justify-between border-b border-gray-200 py-4"
+            >
+              <div class="flex items-center gap-3">
+                <div class="bg-brand-light p-2 rounded-lg text-brand-navy">
+                  <i data-lucide="bike" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <p class="font-bold">Ojek / Kirim Motor</p>
+                  <p class="text-xs text-gray-500">
+                    Sat set wat wet, kirim paket kilat
+                  </p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="text-xs text-gray-500">Mulai</p>
+                <p class="text-xl font-bold text-brand-green">Rp 10.000</p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between py-4">
+              <div class="flex items-center gap-3">
+                <div class="bg-brand-light p-2 rounded-lg text-brand-navy">
+                  <i data-lucide="car" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <p class="font-bold">Antar Jemput Mobil</p>
+                  <p class="text-xs text-gray-500">Adem, muat akeh, nyaman</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="text-xs text-gray-500">Mulai</p>
+                <p class="text-xl font-bold text-brand-green">Rp 100.000</p>
+              </div>
+            </div>
+
+            <a
+              href="https://wa.me/6283133851492?text=Mas,%20kula%20badhe%20pesen%20jasa%20antar%20jemput..."
+              class="block w-full text-center bg-brand-navy text-white font-bold py-3 rounded-xl mt-6 hover:bg-opacity-90 transition"
+            >
+              Pesen Saiki
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left"
+      >
+        <div>
+          <div
+            class="flex items-center justify-center md:justify-start gap-2 mb-4"
+          >
+            <img
+              src="asset/logo.png"
+              alt="Logo Small"
+              class="w-8 h-8 rounded-full bg-white object-cover"
+            />
+            <span class="text-white font-serif font-bold text-lg"
+              >Mas Tulung Mas</span
+            >
+          </div>
+          <p class="text-sm leading-relaxed mb-4">
+            Kami bukan sekedar jasa suruhan, kami adalah tetangga yang siap
+            membantu Anda. Tulus, Ikhlas, dan Amanah.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-4">Hubungi Kami</h4>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center justify-center md:justify-start gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-brand-gold"></i> Admin
+              1: 0831-3385-1492
+            </li>
+            <li class="flex items-center justify-center md:justify-start gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-brand-gold"></i> Admin
+              2: 0877-6333-8195
+            </li>
+            <li class="flex items-center justify-center md:justify-start gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-gold"></i>
+              Karangpandan, Jawa Tengah
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-4">Motto</h4>
+          <p class="text-brand-gold font-serif italic text-lg">"Sakkabehe."</p>
+          <p class="text-xs mt-2">Segalanya bisa dibantu, selama positif.</p>
+        </div>
+      </div>
+      <div class="text-center mt-12 pt-8 border-t border-slate-800 text-xs">
+        &copy; 2024 Mas Tulung Mas Karangpandan. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- Mobile Floating Action Bar (Sticky Bottom) -->
+    <div
+      class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 md:hidden z-50 flex justify-between items-center shadow-[0_-5px_20px_rgba(0,0,0,0.1)]"
+    >
+      <div class="flex flex-col">
+        <span
+          class="text-[10px] text-gray-500 uppercase tracking-wider font-bold"
+          >Butuh Bantuan?</span
+        >
+        <span class="text-brand-navy font-bold text-sm">Admin Online</span>
+      </div>
+      <div class="flex gap-2">
+        <a
+          href="https://wa.me/6287763338195"
+          class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 border border-gray-300"
+        >
+          <span class="text-xs font-bold">A2</span>
+        </a>
+        <a
+          href="https://wa.me/6283133851492"
+          class="bg-brand-green text-white px-5 py-2 rounded-full font-bold text-sm flex items-center gap-2 shadow-lg shadow-green-200"
+        >
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          Chat A1
+        </a>
+      </div>
+    </div>
+    <div class="h-20 md:hidden"></div>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
